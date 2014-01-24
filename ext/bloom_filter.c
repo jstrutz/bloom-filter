@@ -73,7 +73,7 @@ VALUE bloom_initialize(int argc, VALUE *argv, VALUE self) {
             rb_raise(rb_eArgError, "requires either size & error_rate or bits & hashes");
     }
 
-    filter = bloom_filter_new(nbits, string_nocase_hash, nhash);
+    filter = bloom_filter_new(nbits, string_hash, nhash);
 
     if (!filter)
         rb_raise(rb_eNoMemError, "unable to allocate memory for BloomFilter");
